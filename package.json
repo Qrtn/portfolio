@@ -12,7 +12,12 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "lint": "yarn lint:check --fix",
+    "lint:check": "eslint src --ext js,jsx,ts,tsx",
+    "format": "yarn format:output --write",
+    "format:check": "yarn format:output --check",
+    "format:output": "prettier \"./**/*.{js,jsx,ts,tsx,css,scss,json,md}\""
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
@@ -31,5 +36,13 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@hack4impact-uiuc/eslint-plugin": "^2.0.11",
+    "eslint": "^7.27.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0"
   }
 }

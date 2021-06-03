@@ -32,14 +32,26 @@ const IndexPage = () => (
       <h1>Jeffrey Tang</h1>
     </header>
     <main>
+      <p>I study CS at UIUC!</p>
       <p>
-        I study CS at UIUC. I'm also a Tech Lead at{' '}
-        <a href="https://uiuc.hack4impact.org/">Hack4Impact</a>.
+        I'm also a tech lead at{' '}
+        <a href="https://uiuc.hack4impact.org/">Hack4Impact</a>. We build
+        open-source software for non-profits. Most recently, I've been working
+        with a team on{' '}
+        <a href="https://falling-fruit.vercel.app/">Falling Fruit</a>, a
+        collaborative foraging map with food around the world.
       </p>
-      <p>This summer I'll be a quant trader intern at IMC Trading.</p>
       <p>
-        Previously at Citadel and Citadel Securities, and The Tuesday Company.
+        This summer I'll be a quant trader intern at IMC Trading. Previously, I
+        was at Citadel, Citadel Securities, and The Tuesday Company.
       </p>
+      {/*
+      <p>
+        <strong>
+          <a href="some link">My photography.</a>
+        </strong>
+      </p>
+      */}
       {/* 
       <p>
         I study CS at <a href="https://illinois.edu/">UIUC</a>. I'm also a Tech

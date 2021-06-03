@@ -3,6 +3,8 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
+import FallingFruitLogo from '../images/falling_fruit_logo.png'
+
 const Links = styled.div`
   a {
     margin-right: 20px;
@@ -14,7 +16,13 @@ const Links = styled.div`
 `
 
 const FallingFruit = () => (
-  <StaticImage height={20} src="../images/ff.png" style={{ marginLeft: 2 }} />
+  <img
+    height={20}
+    width={20}
+    src={FallingFruitLogo}
+    alt="Falling Fruit logo"
+    style={{ marginLeft: 3, verticalAlign: -3 }}
+  />
 )
 
 const IndexPage = () => (

@@ -21,7 +21,7 @@ const FallingFruit = () => (
     width={20}
     src={FallingFruitLogo}
     alt="Falling Fruit logo"
-    style={{ marginLeft: 3, verticalAlign: -3 }}
+    style={{ marginLeft: 2, verticalAlign: -3 }}
   />
 )
 
@@ -58,7 +58,7 @@ const IndexPage = () => (
         This summer I'll be a quant trader intern at IMC Trading. Previously, I
         was at Citadel, Citadel Securities, and The Tuesday Company.
       </p>
-      <p>My hobbies include making pizza, photography, and tennis.</p>
+      <p>My hobbies include photography, making pizza, and tennis.</p>
       {/*
       <p>
         <strong>

@@ -13,6 +13,10 @@ const Links = styled.div`
   }
 `
 
+const FallingFruit = () => (
+  <StaticImage height={20} src="../images/ff.png" style={{ marginLeft: 2 }} />
+)
+
 const IndexPage = () => (
   <>
     <Helmet>
@@ -38,13 +42,15 @@ const IndexPage = () => (
         <a href="https://uiuc.hack4impact.org/">Hack4Impact</a>. We build
         open-source software for non-profits. Most recently, I've been working
         with a team on{' '}
-        <a href="https://falling-fruit.vercel.app/">Falling Fruit</a>, a
-        collaborative foraging map with food around the world.
+        <a href="https://falling-fruit.vercel.app/">Falling Fruit</a>
+        <FallingFruit />, a collaborative foraging map with food around the
+        world.
       </p>
       <p>
         This summer I'll be a quant trader intern at IMC Trading. Previously, I
         was at Citadel, Citadel Securities, and The Tuesday Company.
       </p>
+      <p>My hobbies include making pizza, photography, and tennis.</p>
       {/*
       <p>
         <strong>

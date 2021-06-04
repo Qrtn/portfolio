@@ -39,6 +39,8 @@ const Layout = styled.div`
 const PhotoPage = ({ data }) => {
   const images = data.allFile.nodes.map((node) => node.childImageSharp)
 
+  console.log(images)
+
   return (
     <>
       <SEO title="Photos" />
@@ -66,9 +68,10 @@ export const pageQuery = graphql`
         childImageSharp {
           id
           gatsbyImageData(
-            width: 1000
             placeholder: BLURRED
-            formats: [AUTO, WEBP]
+            width: 1000
+            outputPixelDensities: [0.4, 0.6, 0.8, 1]
+            sizes: "(max-width: 500px) 90vw, (max-width: 800px) 45vw, (max-width: 1800px) 30vw, 25vw"
           )
         }
       }

@@ -61,8 +61,8 @@ const IndexPage = () => (
         was at Citadel, Citadel Securities, and The Tuesday Company.
       </p>
       <p>
-        My hobbies include <Link to="/photos">photography</Link>, making pizza,
-        and tennis.
+        My hobbies include <Link to="/photos">photography</Link>,{' '}
+        <Link to="/photos/pizza">making pizza</Link>, and tennis.
       </p>
       {/*
       <p>

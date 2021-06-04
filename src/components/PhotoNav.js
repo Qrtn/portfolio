@@ -18,10 +18,9 @@ const AlbumLinks = styled.ul`
     }
 
     @media ${MOBILE} {
-      display: inline;
+      display: inline-block;
       margin-right: 20px;
-      line-height: 2em;
-      white-space: nowrap;
+      height: 1.5em;
     }
   }
 `

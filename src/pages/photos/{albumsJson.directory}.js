@@ -41,8 +41,6 @@ const Layout = styled.div`
 const PhotoPage = ({ data }) => {
   const images = data.allFile.nodes.map((node) => node.childImageSharp)
 
-  console.log(images)
-
   return (
     <>
       <SEO title="Photos" />

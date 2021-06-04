@@ -29,12 +29,15 @@
     "gatsby-plugin-sharp": "^3.6.0",
     "gatsby-plugin-styled-components": "^4.6.0",
     "gatsby-source-filesystem": "^3.6.0",
+    "gatsby-transformer-json": "^3.6.0",
     "gatsby-transformer-sharp": "^3.6.0",
+    "masonry-layout": "^4.2.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-is": "^17.0.2",
-    "styled-components": "^5.3.0"
+    "styled-components": "^5.3.0",
+    "water.css": "^2.0.0"
   },
   "devDependencies": {
     "@hack4impact-uiuc/eslint-plugin": "^2.0.11",

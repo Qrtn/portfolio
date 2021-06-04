@@ -1,3 +1,5 @@
+import 'water.css/out/water.css'
+
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'

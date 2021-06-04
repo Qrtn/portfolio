@@ -1,7 +1,11 @@
 import { navigate } from 'gatsby'
+import { useEffect } from 'react'
 
 const NotFoundPage = () => {
-  navigate('/')
+  useEffect(() => {
+    navigate('/')
+  }, [])
+
   return null
 }
 

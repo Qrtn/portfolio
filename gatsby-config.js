@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Jeffrey Tang',
+    description: 'Jeffrey Tang is a CS student at the University of Illinois.',
+    author: 'Jeffrey Tang',
   },
   plugins: [
     'gatsby-plugin-styled-components',

@@ -3,9 +3,9 @@ import 'water.css/out/water.css'
 import { Link } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
+import SEO from '../components/seo'
 import FallingFruitLogo from '../images/falling_fruit_logo.png'
 
 const Links = styled.ul`
@@ -35,13 +35,7 @@ const FallingFruit = () => (
 
 const IndexPage = () => (
   <>
-    <Helmet>
-      <title>Jeffrey Tang</title>
-      <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
-      />
-    </Helmet>
+    <SEO title="Home" />
     <header>
       <StaticImage
         src="../images/jeffrey_hk_cow_cropped.jpg"

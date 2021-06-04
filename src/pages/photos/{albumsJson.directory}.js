@@ -1,11 +1,11 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import { Helmet } from 'react-helmet'
 import { createGlobalStyle } from 'styled-components'
 import styled from 'styled-components/macro'
 
 import Gallery from '../../components/Gallery'
 import PhotoNav from '../../components/PhotoNav'
+import SEO from '../../components/seo'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -30,9 +30,7 @@ const PhotoPage = ({ data }) => {
 
   return (
     <>
-      <Helmet>
-        <title>Photos | Jeffrey Tang</title>
-      </Helmet>
+      <SEO title="Photos" />
       <GlobalStyle />
       <Layout>
         <PhotoNav />

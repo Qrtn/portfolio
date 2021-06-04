@@ -1,29 +1,35 @@
 import { GatsbyImage } from 'gatsby-plugin-image'
 import React from 'react'
-import Masonry from 'react-masonry-component'
+import Masonry from 'react-masonry-css'
 import styled from 'styled-components/macro'
 
 const GUTTER = 10
-const COLUMNS = 3
 
-const MASONRY_OPTIONS = {
-  itemSelector: 'a',
-  gutter: GUTTER,
-}
+const StyledMasonry = styled(Masonry)`
+  display: flex;
+  margin-left: -30px;
+  width: auto;
+  margin-left: 30px;
+
+  > div {
+    // Masonry columns
+    padding-left: ${GUTTER}px;
+  }
+`
 
 const GalleryItem = styled.a`
+  display: block;
   margin-bottom: ${GUTTER}px;
-  width: calc((100% - ${(COLUMNS - 1) * GUTTER}px) / ${COLUMNS});
 `
 
 const Gallery = ({ images }) => (
-  <Masonry options={MASONRY_OPTIONS}>
+  <StyledMasonry breakpointCols={3}>
     {images.map(({ id, gatsbyImageData }) => (
       <GalleryItem key={id} href={gatsbyImageData.images.fallback.src}>
         <GatsbyImage key={id} image={gatsbyImageData} alt={id} />
       </GalleryItem>
     ))}
-  </Masonry>
+  </StyledMasonry>
 )
 
 export default Gallery

@@ -13,7 +13,7 @@ const Links = styled.ul`
   padding: 0;
 
   li {
-    display: inline;
+    display: inline-block;
     margin-left: 0;
     margin-right: 20px;
 

@@ -70,7 +70,6 @@ export const pageQuery = graphql`
         childImageSharp {
           id
           gatsbyImageData(
-            placeholder: BLURRED
             width: 1000
             outputPixelDensities: [0.4, 0.6, 0.8, 1]
             sizes: "(max-width: 500px) 95vw, (max-width: 800px) 45vw, (max-width: 1800px) 30vw, 25vw"

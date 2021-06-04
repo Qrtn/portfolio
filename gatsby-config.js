@@ -8,7 +8,14 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        defaults: {
+          placeholder: 'blurred',
+        },
+      },
+    },
     'gatsby-transformer-sharp',
     'gatsby-transformer-json',
     {

@@ -5,6 +5,7 @@ module.exports = {
     author: 'Jeffrey Tang',
   },
   plugins: [
+    'gatsby-plugin-remove-trailing-slashes',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',

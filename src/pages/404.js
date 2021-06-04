@@ -1,4 +1,4 @@
-import { navigate } from 'gatsby'
+import { navigate } from '@reach/router'
 import { useEffect } from 'react'
 
 const NotFoundPage = () => {

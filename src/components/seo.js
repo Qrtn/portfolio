@@ -62,12 +62,7 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         ...meta,
       ]}
-    >
-      <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap"
-        rel="stylesheet"
-      />
-    </Helmet>
+    />
   )
 }
 

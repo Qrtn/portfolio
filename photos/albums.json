@@ -4,5 +4,13 @@
   {
     "directory": "grad",
     "name": "Graduation Photos @ UIUC"
+  },
+  {
+    "directory": "pizza",
+    "name": "My Pizza"
+  },
+  {
+    "directory": "travel",
+    "name": "Travel/Landscapes"
   }
 ]

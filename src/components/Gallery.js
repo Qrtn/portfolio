@@ -3,17 +3,20 @@ import React from 'react'
 import Masonry from 'react-masonry-css'
 import styled from 'styled-components/macro'
 
-const GUTTER = 10
+const GUTTER = 20
+const BREAKPOINT_COLS = {
+  default: 4,
+  1800: 3,
+  800: 2,
+  500: 1,
+}
 
 const StyledMasonry = styled(Masonry)`
   display: flex;
-  margin-left: -30px;
-  width: auto;
-  margin-left: 30px;
 
-  > div {
+  > div:not(:first-child) {
     // Masonry columns
-    padding-left: ${GUTTER}px;
+    margin-left: ${GUTTER}px;
   }
 `
 
@@ -23,7 +26,7 @@ const GalleryItem = styled.a`
 `
 
 const Gallery = ({ images }) => (
-  <StyledMasonry breakpointCols={3}>
+  <StyledMasonry breakpointCols={BREAKPOINT_COLS}>
     {images.map(({ id, gatsbyImageData }) => (
       <GalleryItem key={id} href={gatsbyImageData.images.fallback.src}>
         <GatsbyImage key={id} image={gatsbyImageData} alt={id} />

@@ -3,25 +3,36 @@ import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import styled from 'styled-components/macro'
 
+import { DESKTOP } from '../../components/breakpoints'
 import Gallery from '../../components/Gallery'
 import PhotoNav from '../../components/PhotoNav'
 import SEO from '../../components/seo'
 
-const GlobalStyle = createGlobalStyle`
+const BodyStyle = createGlobalStyle`
   body {
-    max-width: 1400px !important;
+    max-width: none;
+    margin: 0;
+    padding: 0;
   }
 `
 
 const Layout = styled.div`
-  display: flex;
+  margin: 20px;
 
-  nav {
-    width: 30%;
-  }
+  @media ${DESKTOP} {
+    margin: 30px;
+    position: relative;
 
-  main {
-    flex: 1;
+    nav {
+      position: fixed;
+      width: 250px;
+    }
+
+    main {
+      position: absolute;
+      left: 275px;
+      overflow: auto;
+    }
   }
 `
 
@@ -31,7 +42,7 @@ const PhotoPage = ({ data }) => {
   return (
     <>
       <SEO title="Photos" />
-      <GlobalStyle />
+      <BodyStyle />
       <Layout>
         <PhotoNav />
         <main>
@@ -43,11 +54,7 @@ const PhotoPage = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query ImagesForGallery($id: String!, $directory: String!) {
-    albumsJson(id: { eq: $id }) {
-      name
-    }
-
+  query ImagesForGallery($directory: String!) {
     allFile(
       filter: {
         sourceInstanceName: { eq: "photos" }

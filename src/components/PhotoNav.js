@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
+import { MOBILE } from './breakpoints'
+
 const { Link, useStaticQuery, graphql } = require('gatsby')
 
 const AlbumLinks = styled.ul`
@@ -13,6 +15,13 @@ const AlbumLinks = styled.ul`
     .active {
       font-weight: bold;
       text-decoration: none;
+    }
+
+    @media ${MOBILE} {
+      display: inline;
+      margin-right: 20px;
+      line-height: 2em;
+      white-space: nowrap;
     }
   }
 `
@@ -31,12 +40,16 @@ const PhotoNav = () => {
 
   return (
     <nav>
-      <Link to="/">Back to home</Link>
-      <h1>Photography</h1>
+      <Link to="/">Home</Link>
+      <h2>Photography</h2>
       <AlbumLinks>
         {data.allAlbumsJson.nodes.map(({ name, directory }) => (
           <li key={name}>
-            <Link to={`/photos/${directory}`} activeClassName="active">
+            <Link
+              to={`/photos/${directory}`}
+              activeClassName="active"
+              partiallyActive
+            >
               {name}
             </Link>
           </li>

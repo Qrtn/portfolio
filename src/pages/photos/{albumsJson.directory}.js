@@ -1,3 +1,5 @@
+import 'water.css/out/water.css'
+
 import { graphql } from 'gatsby'
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
@@ -71,7 +73,7 @@ export const pageQuery = graphql`
             placeholder: BLURRED
             width: 1000
             outputPixelDensities: [0.4, 0.6, 0.8, 1]
-            sizes: "(max-width: 500px) 90vw, (max-width: 800px) 45vw, (max-width: 1800px) 30vw, 25vw"
+            sizes: "(max-width: 500px) 95vw, (max-width: 800px) 45vw, (max-width: 1800px) 30vw, 25vw"
           )
         }
       }

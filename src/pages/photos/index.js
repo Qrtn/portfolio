@@ -1,8 +1,6 @@
-import { navigate } from 'gatsby'
+import { Redirect } from '@reach/router'
+import React from 'react'
 
-const NotFoundPage = () => {
-  navigate('/photos/grad')
-  return null
-}
+const PhotosIndex = () => <Redirect noThrow to="/photos/grad" />
 
-export default NotFoundPage
+export default PhotosIndex

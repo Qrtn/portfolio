@@ -64,28 +64,6 @@ const IndexPage = () => (
         My hobbies include <Link to="/photos">photography</Link>,{' '}
         <Link to="/photos/pizza">making pizza</Link>, and tennis.
       </p>
-      {/*
-      <p>
-        <strong>
-          <a href="some link">My photography.</a>
-        </strong>
-      </p>
-      */}
-      {/* 
-      <p>
-        I study CS at <a href="https://illinois.edu/">UIUC</a>. I'm also a Tech
-        Lead at <a href="https://uiuc.hack4impact.org/">Hack4Impact</a>.
-      </p>
-      <p>
-        This summer I'll be a quant trader intern at{' '}
-        <a href="https://www.imc.com/">IMC Trading</a>.
-      </p>
-      <p>
-        Previously at <a href="https://www.citadel.com/">Citadel</a> and{' '}
-        <a href="https://www.citadelsecurities.com/">Citadel Securities</a>, and{' '}
-        <a href="https://www.tuesdaycompany.com/">The Tuesday Company</a>.
-      </p>
-      */}
     </main>
     <footer>
       <Links>

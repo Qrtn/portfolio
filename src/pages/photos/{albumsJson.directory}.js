@@ -1,12 +1,13 @@
 import 'water.css/out/water.css'
 
 import { graphql } from 'gatsby'
-import React from 'react'
+import React, { useState } from 'react'
 import { createGlobalStyle } from 'styled-components'
 import styled from 'styled-components/macro'
 
 import { DESKTOP } from '../../components/breakpoints'
 import Gallery from '../../components/Gallery'
+import Lightbox from '../../components/Lightbox'
 import PhotoNav from '../../components/PhotoNav'
 import SEO from '../../components/seo'
 
@@ -39,7 +40,15 @@ const Layout = styled.div`
 `
 
 const PhotoPage = ({ data }) => {
-  const images = data.allFile.nodes.map((node) => node.childImageSharp)
+  const galleryImages = data.allFile.nodes.map(
+    (node) => node.childImageSharp.thumb,
+  )
+  const lightboxImages = data.allFile.nodes.map(
+    (node) => node.childImageSharp.full,
+  )
+
+  const [index, setIndex] = useState(0)
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
@@ -48,9 +57,22 @@ const PhotoPage = ({ data }) => {
       <Layout>
         <PhotoNav />
         <main>
-          <Gallery images={images} />
+          <Gallery
+            images={galleryImages}
+            onImageClick={(index) => {
+              setIndex(index)
+              setIsOpen(true)
+            }}
+          />
         </main>
       </Layout>
+      <Lightbox
+        images={lightboxImages}
+        index={index}
+        onChange={setIndex}
+        isOpen={isOpen}
+        onDismiss={() => setIsOpen(false)}
+      />
     </>
   )
 }
@@ -67,11 +89,12 @@ export const pageQuery = graphql`
       nodes {
         childImageSharp {
           id
-          gatsbyImageData(
+          thumb: gatsbyImageData(
             width: 1000
             outputPixelDensities: [0.4, 0.6, 0.8, 1]
             sizes: "(max-width: 500px) 95vw, (max-width: 800px) 45vw, (max-width: 1800px) 30vw, 25vw"
           )
+          full: gatsbyImageData(width: 2000)
         }
       }
     }

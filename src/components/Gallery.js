@@ -27,15 +27,19 @@ const StyledMasonry = styled(Masonry)`
 `
 
 const GalleryItem = styled.a`
+  ${({ onClick }) => onClick && 'cursor: pointer;'}
   display: block;
   margin-bottom: var(--gutter);
 `
 
-const Gallery = ({ images }) => (
+const Gallery = ({ images, onImageClick }) => (
   <StyledMasonry breakpointCols={BREAKPOINT_COLS}>
-    {images.map(({ id, gatsbyImageData }) => (
-      <GalleryItem key={id} href={gatsbyImageData.images.fallback.src}>
-        <GatsbyImage key={id} image={gatsbyImageData} alt={id} />
+    {images.map((gatsbyImageData, index) => (
+      <GalleryItem
+        key={gatsbyImageData.images.fallback.src}
+        onClick={onImageClick && (() => onImageClick(index))}
+      >
+        <GatsbyImage image={gatsbyImageData} alt="" />
       </GalleryItem>
     ))}
   </StyledMasonry>

@@ -4,11 +4,11 @@
     "name": "Graduation Photos @ UIUC"
   },
   {
-    "directory": "pizza",
-    "name": "My Pizza"
-  },
-  {
     "directory": "travel",
     "name": "Travel/Landscapes"
+  },
+  {
+    "directory": "pizza",
+    "name": "My Pizza"
   }
 ]

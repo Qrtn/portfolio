@@ -3,7 +3,8 @@ import React from 'react'
 import Masonry from 'react-masonry-css'
 import styled from 'styled-components/macro'
 
-const GUTTER = 20
+import { MOBILE } from './breakpoints'
+
 const BREAKPOINT_COLS = {
   default: 4,
   1800: 3,
@@ -14,15 +15,20 @@ const BREAKPOINT_COLS = {
 const StyledMasonry = styled(Masonry)`
   display: flex;
 
+  --gutter: 20px;
+  @media ${MOBILE} {
+    --gutter: 10px;
+  }
+
   > div:not(:first-child) {
     // Masonry columns
-    margin-left: ${GUTTER}px;
+    margin-left: var(--gutter);
   }
 `
 
 const GalleryItem = styled.a`
   display: block;
-  margin-bottom: ${GUTTER}px;
+  margin-bottom: var(--gutter);
 `
 
 const Gallery = ({ images }) => (

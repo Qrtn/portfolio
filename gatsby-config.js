@@ -39,5 +39,11 @@ module.exports = {
         path: './photos',
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['G-7CLL9FMJY1'],
+      },
+    },
   ],
 }

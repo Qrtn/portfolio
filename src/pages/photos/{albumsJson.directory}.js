@@ -46,13 +46,14 @@ const PhotoPage = ({ data }) => {
   const lightboxImages = data.allFile.nodes.map(
     (node) => node.childImageSharp.full,
   )
+  const albumName = data.albumsJson.name
 
   const [index, setIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
-      <SEO title="Photos" />
+      <SEO title={albumName} />
       <BodyStyle />
       <Layout>
         <PhotoNav />
@@ -79,6 +80,10 @@ const PhotoPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query ImagesForGallery($directory: String!) {
+    albumsJson(directory: { eq: $directory }) {
+      name
+    }
+
     allFile(
       filter: {
         sourceInstanceName: { eq: "photos" }

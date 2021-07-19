@@ -10,5 +10,9 @@
   {
     "directory": "pizza",
     "name": "My Pizza"
+  },
+  {
+    "directory": "me",
+    "name": "Pictures of Me"
   }
 ]

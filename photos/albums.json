@@ -1,11 +1,11 @@
 [
   {
-    "directory": "grad",
-    "name": "Graduation Photos @ UIUC"
+    "directory": "landscapes",
+    "name": "Landscapes"
   },
   {
-    "directory": "travel",
-    "name": "Travel/Landscapes"
+    "directory": "grad",
+    "name": "Graduation Photos"
   },
   {
     "directory": "pizza",

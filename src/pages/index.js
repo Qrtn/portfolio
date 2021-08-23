@@ -41,7 +41,7 @@ const IndexPage = () => (
         src="../images/jeffrey_hk_cow_cropped.jpg"
         alt="Jeffrey in Lantau Island, HK"
         title="On Lantau Island in Hong Kong, cows roam free among the tourists."
-        width={450}
+        width={400}
       />
       <h1>Jeffrey Tang</h1>
     </header>
@@ -57,8 +57,8 @@ const IndexPage = () => (
         world.
       </p>
       <p>
-        This summer I'll be a quant trader intern at IMC Trading. Previously, I
-        was at Citadel, Citadel Securities, and The Tuesday Company.
+        Previously, I've interned at IMC Trading, Citadel and Citadel
+        Securities, and The Tuesday Company.
       </p>
       <p>
         My hobbies include <Link to="/photos">photography</Link>,{' '}

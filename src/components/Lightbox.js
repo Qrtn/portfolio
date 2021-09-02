@@ -47,8 +47,8 @@ const StyledDialogContent = styled(DialogContent)`
   cursor: zoom-out;
 
   img {
-    width: ${({ $imgWidth }) => $imgWidth}px;
-    height: ${({ $imgHeight }) => $imgHeight}px;
+    width: ${({ $imgWidth }) => $imgWidth ?? 0}px;
+    height: ${({ $imgHeight }) => $imgHeight ?? 0}px;
   }
 `
 

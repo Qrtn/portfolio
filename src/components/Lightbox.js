@@ -8,6 +8,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 const DIALOG_PADDING = 40
+const CAPTION_HEIGHT = 35
 
 const getImageSize = (parentRect, childRect) => {
   if (!parentRect || !childRect) {
@@ -19,14 +20,14 @@ const getImageSize = (parentRect, childRect) => {
 
   const { width, height } = contain(
     parentWidth - 2 * DIALOG_PADDING,
-    parentHeight - 2 * DIALOG_PADDING,
+    parentHeight - 2 * DIALOG_PADDING - CAPTION_HEIGHT,
     childWidth,
     childHeight,
   )
 
   return {
-    imgWidth: Math.min(width, childWidth),
-    imgHeight: Math.min(height, childHeight),
+    $imgWidth: Math.min(width, childWidth),
+    $imgHeight: Math.min(height, childHeight),
   }
 }
 
@@ -43,11 +44,30 @@ const StyledDialogContent = styled(DialogContent)`
   display: grid;
   place-items: center;
 
+  cursor: zoom-out;
+
   img {
-    width: ${({ imgWidth }) => imgWidth}px;
-    height: ${({ imgHeight }) => imgHeight}px;
+    width: ${({ $imgWidth }) => $imgWidth}px;
+    height: ${({ $imgHeight }) => $imgHeight}px;
   }
 `
+
+const StyledFigure = styled.figure`
+  cursor: default;
+
+  figcaption {
+    text-align: right;
+    margin-top: 5px;
+    font-size: smaller;
+  }
+`
+
+const CaptionedImage = ({ caption, onClick, ...props }) => (
+  <StyledFigure onClick={onClick}>
+    <GatsbyImage {...props} />
+    <figcaption>{caption}</figcaption>
+  </StyledFigure>
+)
 
 const Lightbox = ({ images, index, onChange, isOpen, onDismiss }) => {
   const handleKeyDown = (event) => {
@@ -72,13 +92,14 @@ const Lightbox = ({ images, index, onChange, isOpen, onDismiss }) => {
             ref={ref}
             {...getImageSize(rect, images[index])}
           >
-            <GatsbyImage
+            <CaptionedImage
               image={images[index]}
               alt=""
               onClick={(event) => {
                 onChange((index + 1) % images.length)
                 event.stopPropagation()
               }}
+              caption={`${index + 1} of ${images.length}`}
             />
           </StyledDialogContent>
         )}

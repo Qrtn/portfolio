@@ -45,11 +45,6 @@ const StyledDialogContent = styled(DialogContent)`
   place-items: center;
 
   cursor: zoom-out;
-
-  img {
-    width: ${({ $imgWidth }) => $imgWidth ?? 0}px;
-    height: ${({ $imgHeight }) => $imgHeight ?? 0}px;
-  }
 `
 
 const StyledFigure = styled.figure`
@@ -62,9 +57,16 @@ const StyledFigure = styled.figure`
   }
 `
 
+const Image = styled(GatsbyImage)`
+  &&& img {
+    width: ${({ $imgWidth }) => $imgWidth}px;
+    height: ${({ $imgHeight }) => $imgHeight}px;
+  }
+`
+
 const CaptionedImage = ({ caption, onClick, ...props }) => (
   <StyledFigure onClick={onClick}>
-    <GatsbyImage {...props} />
+    <Image {...props} />
     <figcaption>{caption}</figcaption>
   </StyledFigure>
 )
@@ -90,7 +92,6 @@ const Lightbox = ({ images, index, onChange, isOpen, onDismiss }) => {
             aria-label="Lightbox"
             onClick={onDismiss}
             ref={ref}
-            {...getImageSize(rect, images[index])}
           >
             <CaptionedImage
               image={images[index]}
@@ -100,6 +101,7 @@ const Lightbox = ({ images, index, onChange, isOpen, onDismiss }) => {
                 event.stopPropagation()
               }}
               caption={`${index + 1} of ${images.length}`}
+              {...getImageSize(rect, images[index])}
             />
           </StyledDialogContent>
         )}

@@ -7,20 +7,31 @@ import { contain } from 'intrinsic-scale'
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const DIALOG_PADDING = 40
+import { MOBILE } from './breakpoints'
+
 const CAPTION_HEIGHT = 35
 
-const getImageSize = (parentRect, childRect) => {
+const getProp = (elem, prop) =>
+  parseFloat(window.getComputedStyle(elem).getPropertyValue(prop))
+
+const getImageSize = (parentRect, childRect, parentRef) => {
   if (!parentRect || !childRect) {
     return null
   }
+
+  const paddingWidth =
+    getProp(parentRef.current, 'padding-left') +
+    getProp(parentRef.current, 'padding-right')
+  const paddingHeight =
+    getProp(parentRef.current, 'padding-top') +
+    getProp(parentRef.current, 'padding-bottom')
 
   const { width: parentWidth, height: parentHeight } = parentRect
   const { width: childWidth, height: childHeight } = childRect
 
   const { width, height } = contain(
-    parentWidth - 2 * DIALOG_PADDING,
-    parentHeight - 2 * DIALOG_PADDING - CAPTION_HEIGHT,
+    parentWidth - paddingWidth,
+    parentHeight - paddingHeight - CAPTION_HEIGHT,
     childWidth,
     childHeight,
   )
@@ -39,7 +50,11 @@ const StyledDialogContent = styled(DialogContent)`
   height: 100%;
 
   box-sizing: border-box;
-  padding: ${DIALOG_PADDING}px;
+
+  padding: 40px;
+  @media ${MOBILE} {
+    padding: 20px;
+  }
 
   display: grid;
   place-items: center;
@@ -48,6 +63,7 @@ const StyledDialogContent = styled(DialogContent)`
 `
 
 const StyledFigure = styled.figure`
+  margin: 0;
   cursor: default;
 
   figcaption {
@@ -101,7 +117,7 @@ const Lightbox = ({ images, index, onChange, isOpen, onDismiss }) => {
                 event.stopPropagation()
               }}
               caption={`${index + 1} of ${images.length}`}
-              {...getImageSize(rect, images[index])}
+              {...getImageSize(rect, images[index], ref)}
             />
           </StyledDialogContent>
         )}

@@ -1,9 +1,34 @@
 import '@reach/dialog/styles.css'
 
 import { DialogContent, DialogOverlay } from '@reach/dialog'
+import Rect from '@reach/rect'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import { contain } from 'intrinsic-scale'
 import React from 'react'
 import styled from 'styled-components/macro'
+
+const DIALOG_PADDING = 40
+
+const getImageSize = (parentRect, childRect) => {
+  if (!parentRect || !childRect) {
+    return null
+  }
+
+  const { width: parentWidth, height: parentHeight } = parentRect
+  const { width: childWidth, height: childHeight } = childRect
+
+  const { width, height } = contain(
+    parentWidth - 2 * DIALOG_PADDING,
+    parentHeight - 2 * DIALOG_PADDING,
+    childWidth,
+    childHeight,
+  )
+
+  return {
+    imgWidth: Math.min(width, childWidth),
+    imgHeight: Math.min(height, childHeight),
+  }
+}
 
 const StyledDialogContent = styled(DialogContent)`
   margin: 0;
@@ -13,14 +38,15 @@ const StyledDialogContent = styled(DialogContent)`
   height: 100%;
 
   box-sizing: border-box;
-  padding: 40px;
-`
+  padding: ${DIALOG_PADDING}px;
 
-const Image = styled(GatsbyImage).attrs({
-  objectFit: 'contain',
-})`
-  width: 100%;
-  height: 100%;
+  display: grid;
+  place-items: center;
+
+  img {
+    width: ${({ imgWidth }) => imgWidth}px;
+    height: ${({ imgHeight }) => imgHeight}px;
+  }
 `
 
 const Lightbox = ({ images, index, onChange, isOpen, onDismiss }) => {
@@ -38,16 +64,25 @@ const Lightbox = ({ images, index, onChange, isOpen, onDismiss }) => {
       onDismiss={onDismiss}
       onKeyDown={handleKeyDown}
     >
-      <StyledDialogContent aria-label="Lightbox" onClick={onDismiss}>
-        <Image
-          image={images[index]}
-          alt=""
-          onClick={(event) => {
-            onChange((index + 1) % images.length)
-            event.stopPropagation()
-          }}
-        />
-      </StyledDialogContent>
+      <Rect>
+        {({ rect, ref }) => (
+          <StyledDialogContent
+            aria-label="Lightbox"
+            onClick={onDismiss}
+            ref={ref}
+            {...getImageSize(rect, images[index])}
+          >
+            <GatsbyImage
+              image={images[index]}
+              alt=""
+              onClick={(event) => {
+                onChange((index + 1) % images.length)
+                event.stopPropagation()
+              }}
+            />
+          </StyledDialogContent>
+        )}
+      </Rect>
     </DialogOverlay>
   )
 }

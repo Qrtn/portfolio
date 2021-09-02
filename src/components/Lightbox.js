@@ -52,9 +52,9 @@ const StyledDialogContent = styled(DialogContent)`
 const Lightbox = ({ images, index, onChange, isOpen, onDismiss }) => {
   const handleKeyDown = (event) => {
     if (event.key === 'ArrowRight') {
-      onChange((index + 1) % images.length)
+      onChange(index < images.length - 1 ? index + 1 : 0)
     } else if (event.key === 'ArrowLeft') {
-      onChange((index - 1) % images.length)
+      onChange(index > 0 ? index - 1 : images.length - 1)
     }
   }
 

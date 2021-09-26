@@ -40,9 +40,9 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-google-gtag',
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingIds: ['G-7D2L85JXVX'],
+        trackingId: 'UA-55274619-2',
       },
     },
   ],

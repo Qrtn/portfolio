@@ -25,13 +25,14 @@ const AlbumLinks = styled.ul`
   }
 `
 
-const PhotoNav = () => {
+const PhotoNav = ({ currentAlbumDirectory }) => {
   const data = useStaticQuery(graphql`
     query Albums {
       allAlbumsJson {
         nodes {
           name
           directory
+          hidden
         }
       }
     }
@@ -42,7 +43,7 @@ const PhotoNav = () => {
       <Link to="/">Home</Link>
       <h2>Photography</h2>
       <AlbumLinks>
-        {data.allAlbumsJson.nodes.map(({ name, directory }) => (
+        {data.allAlbumsJson.nodes.map(({ name, directory, hidden }) => ((!hidden || directory === currentAlbumDirectory) && (
           <li key={name}>
             <Link
               to={`/photos/${directory}`}
@@ -52,7 +53,7 @@ const PhotoNav = () => {
               {name}
             </Link>
           </li>
-        ))}
+        )))}
       </AlbumLinks>
     </nav>
   )

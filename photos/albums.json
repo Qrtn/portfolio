@@ -14,5 +14,10 @@
   {
     "directory": "me",
     "name": "Pictures of Me"
+  },
+  {
+    "directory": "tfn",
+    "name": "The Fashion Network Portfolio",
+    "hidden": true
   }
 ]

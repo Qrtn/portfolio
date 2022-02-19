@@ -39,7 +39,7 @@ const Layout = styled.div`
   }
 `
 
-const PhotoPage = ({ data }) => {
+const PhotoPage = ({ data, params }) => {
   const galleryImages = data.allFile.nodes.map(
     (node) => node.childImageSharp.thumb,
   )
@@ -47,6 +47,7 @@ const PhotoPage = ({ data }) => {
     (node) => node.childImageSharp.full,
   )
   const albumName = data.albumsJson.name
+  const albumDirectory = params.directory
 
   const [index, setIndex] = useState(0)
   const [isOpen, setIsOpen] = useState(false)
@@ -56,7 +57,7 @@ const PhotoPage = ({ data }) => {
       <SEO title={albumName} />
       <BodyStyle />
       <Layout>
-        <PhotoNav />
+        <PhotoNav currentAlbumDirectory={albumDirectory} />
         <main>
           <Gallery
             images={galleryImages}

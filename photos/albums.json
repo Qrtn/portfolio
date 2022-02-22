@@ -18,6 +18,16 @@
   {
     "directory": "tfn",
     "name": "The Fashion Network Portfolio",
-    "hidden": true
+    "hidden": true,
+    "sections": [
+      {
+        "directory": "portraits",
+        "name": "Portraits"
+      },
+      {
+        "directory": "landscapes",
+        "name": "Landscapes"
+      }
+    ]
   }
 ]

@@ -21,12 +21,12 @@
     "hidden": true,
     "sections": [
       {
-        "directory": "portraits",
-        "name": "Portraits"
+        "directory": "people",
+        "name": "People"
       },
       {
-        "directory": "landscapes",
-        "name": "Landscapes"
+        "directory": "scenes",
+        "name": "Scenes"
       }
     ]
   }

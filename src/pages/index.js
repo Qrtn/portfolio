@@ -46,23 +46,34 @@ const IndexPage = () => (
       <h1>Jeffrey Tang</h1>
     </header>
     <main>
-      <p>I study CS at UIUC!</p>
       <p>
-        I'm also a tech lead at{' '}
-        <a href="https://uiuc.hack4impact.org/">Hack4Impact</a>. We build
-        open-source software for non-profits. Most recently, I've been working
-        with a team on{' '}
+        Currently in my final year studying CS at UIUC, and interning at{' '}
+        <a href="https://ramp.com/">Ramp</a> as a software engineer.
+      </p>
+      <p>
+        Previously, I was a tech lead at{' '}
+        <a href="https://uiuc.hack4impact.org/">Hack4Impact</a>, where I built
+        open-source software for non-profits. I worked with a team on{' '}
         <a href="https://falling-fruit.vercel.app/">Falling Fruit</a>
         <FallingFruit />, a collaborative foraging map with food around the
         world.
       </p>
       <p>
-        Previously, I've interned at IMC Trading, Citadel and Citadel
-        Securities, and The Tuesday Company.
+        In industry, I've also worked at{' '}
+        <a href="https://www.imc.com">IMC Trading</a>,{' '}
+        <a href="https://www.citadel.com/">Citadel</a> and{' '}
+        <a href="https://www.citadelsecurities.com/">Citadel Securities</a>, and{' '}
+        <a href="https://www.tuesdaycompany.com/">The Tuesday Company</a>.
       </p>
       <p>
         My hobbies include <Link to="/photos">photography</Link>,{' '}
-        <Link to="/photos/pizza">making pizza</Link>, and tennis.
+        <Link to="/photos/pizza">
+          making pizza{' '}
+          <span role="img" aria-label="pizza emoji">
+            🍕
+          </span>
+        </Link>
+        , and tennis.
       </p>
     </main>
     <footer>

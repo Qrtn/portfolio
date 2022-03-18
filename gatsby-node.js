@@ -29,6 +29,10 @@ exports.createPages = async ({ graphql, actions }) => {
 }
 
 exports.onPostBootstrap = () => {
+  if (process.env.NODE_ENV === 'development') {
+    return
+  }
+
   const outputPath = path.join(__dirname, 'public', 'cs498gd_mp2.mp4')
   console.log('writing to', outputPath)
   const file = fs.createWriteStream(outputPath)
@@ -38,7 +42,7 @@ exports.onPostBootstrap = () => {
       'https://storage.googleapis.com/jeffreytang.com/cs498gd_mp2.mp4',
       function (response) {
         response.pipe(file)
-        response.on('end', () => resolve)
+        response.on('end', resolve)
       },
     ),
   )

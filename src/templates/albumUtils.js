@@ -4,7 +4,7 @@ const separateImages = (imageNodes) => {
   const imagesByDir = {}
 
   for (const imageNode of imageNodes) {
-    const { relativeDirectory, childImageSharp} = imageNode
+    const { relativeDirectory, childImageSharp } = imageNode
     const [_rootDir, sectionDir] = relativeDirectory.split('/')
 
     if (!imagesByDir[sectionDir]) {
@@ -29,8 +29,8 @@ export const makeAlbumSections = (imageNodes, sections) => {
       throw `section "${name}" has no associated directory "${directory}"`
     }
 
-    const thumbImages = imagesByDir[directory].map(image => image.thumb)
-    const fullImages = imagesByDir[directory].map(image => image.full)
+    const thumbImages = imagesByDir[directory].map((image) => image.thumb)
+    const fullImages = imagesByDir[directory].map((image) => image.full)
 
     albumSections.push({
       name,
@@ -39,8 +39,6 @@ export const makeAlbumSections = (imageNodes, sections) => {
     })
     lightboxImages.push(...fullImages)
   })
-
-  console.log('lightboxImages', lightboxImages)
 
   return { albumSections, lightboxImages }
 }

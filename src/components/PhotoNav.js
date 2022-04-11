@@ -43,17 +43,20 @@ const PhotoNav = ({ currentAlbumDirectory }) => {
       <Link to="/">Home</Link>
       <h2>Photography</h2>
       <AlbumLinks>
-        {data.allAlbumsJson.nodes.map(({ name, directory, hidden }) => ((!hidden || directory === currentAlbumDirectory) && (
-          <li key={name}>
-            <Link
-              to={`/photos/${directory}`}
-              activeClassName="active"
-              partiallyActive
-            >
-              {name}
-            </Link>
-          </li>
-        )))}
+        {data.allAlbumsJson.nodes.map(
+          ({ name, directory, hidden }) =>
+            (!hidden || directory === currentAlbumDirectory) && (
+              <li key={name}>
+                <Link
+                  to={`/photos/${directory}`}
+                  activeClassName="active"
+                  partiallyActive
+                >
+                  {name}
+                </Link>
+              </li>
+            ),
+        )}
       </AlbumLinks>
     </nav>
   )

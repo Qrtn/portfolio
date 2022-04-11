@@ -1,4 +1,4 @@
-import 'water.css/out/water.css'
+import 'water.css/out/light.css'
 
 import { graphql } from 'gatsby'
 import React, { useState } from 'react'
@@ -54,7 +54,10 @@ const AlbumTemplate = ({ data, pageContext }) => {
   const { name: albumName, sections } = data.albumsJson
   const albumDirectory = pageContext.directory
 
-  const { albumSections, lightboxImages } = makeAlbumSections(data.allFile.nodes, sections)
+  const { albumSections, lightboxImages } = makeAlbumSections(
+    data.allFile.nodes,
+    sections,
+  )
 
   return (
     <>

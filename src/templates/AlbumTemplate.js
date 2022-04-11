@@ -6,10 +6,11 @@ import { createGlobalStyle } from 'styled-components'
 import styled from 'styled-components/macro'
 
 import { DESKTOP } from '../components/breakpoints'
+import { FontStyle } from '../components/Font'
 import Lightbox from '../components/Lightbox'
 import PhotoNav from '../components/PhotoNav'
 import SectionedGallery from '../components/SectionedGallery'
-import SEO from '../components/seo'
+import SEO from '../components/SEO'
 import { makeAlbumSections } from './albumUtils'
 
 const BodyStyle = createGlobalStyle`
@@ -62,6 +63,7 @@ const AlbumTemplate = ({ data, pageContext }) => {
   return (
     <>
       <SEO title={albumName} />
+      <FontStyle />
       <BodyStyle />
       <Layout>
         <PhotoNav currentAlbumDirectory={albumDirectory} />

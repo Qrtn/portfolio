@@ -3,7 +3,8 @@ import { StaticImage } from 'gatsby-plugin-image'
 import React from 'react'
 import styled from 'styled-components'
 
-import SEO from '../components/seo'
+import { FontStyle } from '../components/Font'
+import SEO from '../components/SEO'
 import FallingFruitLogo from '../images/falling_fruit_logo.png'
 
 const Links = styled.ul`
@@ -33,15 +34,16 @@ const FallingFruit = () => (
 
 const IndexPage = () => (
   <>
+    <FontStyle />
     <SEO title="Home" />
     <header>
       <StaticImage
-        src="../images/jeffrey_hk_cow_cropped.jpg"
-        alt="Jeffrey in Lantau Island, HK"
-        title="On Lantau Island in Hong Kong, cows roam free among the tourists."
-        width={400}
+        src="../../photos/me/010 hong kong.jpg"
+        alt="Jeffrey in Sai Wan, HK"
+        title="Many say it's the most Instagrammable spot in Hong Kong."
+        width={700}
       />
-      <h1>Jeffrey Tang</h1>
+      <h2>Jeffrey Tang</h2>
     </header>
     <main>
       <p>
@@ -65,13 +67,7 @@ const IndexPage = () => (
       </p>
       <p>
         My hobbies include <Link to="/photos">photography</Link>,{' '}
-        <Link to="/photos/pizza">
-          making pizza{' '}
-          <span role="img" aria-label="pizza emoji">
-            🍕
-          </span>
-        </Link>
-        , and tennis.
+        <Link to="/photos/pizza">making pizza</Link>, and tennis.
       </p>
     </main>
     <footer>

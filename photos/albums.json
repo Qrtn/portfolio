@@ -1,7 +1,11 @@
 [
   {
-    "directory": "landscapes",
-    "name": "Landscapes"
+    "directory": "people",
+    "name": "People"
+  },
+  {
+    "directory": "scenes",
+    "name": "Scenes"
   },
   {
     "directory": "grad",

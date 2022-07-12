@@ -49,10 +49,7 @@ const IndexPage = () => (
     </header>
     <main>
       <p>
-        Living in San Francisco and working as a founding engineer at Lassie.{' '}
-        <a href="https://lassie.notion.site/Founding-Business-Hire-5a637c7c2d064535830f9a8fc2f030a7">
-          We're hiring!
-        </a>
+        Living in San Francisco and working as a founding engineer at Lassie.
       </p>
       <p>
         Previously, I studied CS at UIUC. I was a tech lead at{' '}
@@ -86,10 +83,7 @@ const IndexPage = () => (
           <a href="https://www.linkedin.com/in/jeffrey-tang/">LinkedIn</a>
         </li>
         <li>
-          <a
-            href="mailto:me@jeffreytang.com"
-            title="Please feel free to reach out!"
-          >
+          <a href="mailto:me@jeffreytang.com" title="Feel free to reach out!">
             Email
           </a>
         </li>

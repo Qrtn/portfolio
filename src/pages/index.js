@@ -7,7 +7,7 @@ import styled from 'styled-components'
 
 import { FontStyle } from '../components/Font'
 import SEO from '../components/SEO'
-import FallingFruitLogo from '../images/falling_fruit_logo.png'
+// import FallingFruitLogo from '../images/falling_fruit_logo.png'
 
 const Links = styled.ul`
   margin: 0;
@@ -24,6 +24,7 @@ const Links = styled.ul`
   }
 `
 
+/*
 const FallingFruit = () => (
   <img
     height={20}
@@ -33,6 +34,7 @@ const FallingFruit = () => (
     style={{ marginLeft: 2, verticalAlign: -3 }}
   />
 )
+*/
 
 const IndexPage = () => (
   <>
@@ -49,26 +51,15 @@ const IndexPage = () => (
     </header>
     <main>
       <p>
-        Living in San Francisco and working as a founding engineer at Lassie.
+        Currently building at <a href="https://golassie.com">Lassie</a> in San
+        Francisco. We help independent doctors take control of their finances.{' '}
+        <a href="https://jobs.ashbyhq.com/lassie/9b8258f2-996e-414d-b7c5-01109d227fb6">
+          Come join us!
+        </a>
       </p>
       <p>
-        Previously, I studied CS at UIUC. I was a tech lead at{' '}
-        <a href="https://uiuc.hack4impact.org/">Hack4Impact</a>, where I built
-        open-source software for non-profits. I worked with a team on{' '}
-        <a href="https://falling-fruit.vercel.app/">Falling Fruit</a>
-        <FallingFruit />, a collaborative foraging map with food around the
-        world.
-      </p>
-      <p>
-        In industry, I've also worked at <a href="https://ramp.com/">Ramp</a>,{' '}
-        <a href="https://www.imc.com">IMC Trading</a>,{' '}
-        <a href="https://www.citadel.com/">Citadel</a> and{' '}
-        <a href="https://www.citadelsecurities.com/">Citadel Securities</a>, and{' '}
-        <a href="https://www.tuesdaycompany.com/">The Tuesday Company</a>.
-      </p>
-      <p>
-        My hobbies include <Link to="/photos">photography</Link> and{' '}
-        <Link to="/photos/pizza">making pizza</Link>.
+        Previously worked in fintech and finance, studied computer science at
+        UIUC, and built open-source software for non-profits.
       </p>
     </main>
     <footer>
@@ -86,6 +77,11 @@ const IndexPage = () => (
           <a href="mailto:me@jeffreytang.com" title="Feel free to reach out!">
             Email
           </a>
+        </li>
+        <li>
+          <Link to="/photos">
+            <i>Photos</i>
+          </Link>
         </li>
       </Links>
     </footer>
